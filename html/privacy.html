@@ -1,0 +1,421 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Ekle Enterprise</title>
+    <meta name="description" content="Ekle Enterprise">
+    <meta name="author" content="Nicholas Ekle">
+
+    <link rel="stylesheet" href="css/rootStyle.css?v=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="header">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm">
+                    <table>
+                        <tr>
+                            <td>
+                                <img class="header_eklelogo" src="/res/Avatar.png">
+
+                            </td>
+                            <td>
+                                <h1 class="header_title">Ekle Enterprise</h1>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col-sm  header_nav_list_align_bottom">
+                    <ul class=" nav justify-content-end header_nav_list">
+                        <li class="nav-item header_nav_list_item "><a
+                                class="nav-link header_nav_list_link" href="/apps.html">Apps</a>
+                        </li>
+                        <li class="nav-item header_nav_list_item"><a class="nav-link header_nav_list_link"
+                                href="#">About</a></li>
+                        <li class="nav-item header_nav_list_item header_nav_list_item_selected"><a class="nav-link header_nav_list_link"
+                                href="#">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="policy_frame">
+
+                    <div class="policy_tabs_holder">
+                        <ul class="nav nav-tabs" id="policy_tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="spinnyWheel-tab" data-toggle="tab" href="#spinnyWheel"
+                                    role="tab" aria-controls="spinnyWheel" aria-selected="true">Spinny Wheel</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="messageCoder-tab" data-toggle="tab" href="#messageCoder"
+                                    role="tab" aria-controls="messageCoder" aria-selected="true">Message Coder</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="ThreeStrikes-tab" data-toggle="tab" href="#ThreeStrikes"
+                                    role="tab" aria-controls="ThreeStrikes" aria-selected="true">3 Strikes</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="factorGame-tab" data-toggle="tab" href="#factorGame" role="tab"
+                                    aria-controls="factorGame" aria-selected="true">Factor Game</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="photoPainter-tab" data-toggle="tab" href="#photoPainter"
+                                    role="tab" aria-controls="photoPainter" aria-selected="true">Photo Painter</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="trumpainter-tab" data-toggle="tab" href="#trumpainter"
+                                    role="tab" aria-controls="trumpainter" aria-selected="true">Trump Painter</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="trumpDodge-tab" data-toggle="tab" href="#trumpDodge" role="tab"
+                                    aria-controls="trumpDodge" aria-selected="true">Trump Dodge</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="policy_tab_overflow" data-toggle="dropdown"
+                                    href="javascript:{};">
+                                    More <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li style="display: none;"><a class="nav-link" id="spinnyWheel-tab-overflow"
+                                            data-toggle="tab" href="#spinnyWheel" role="tab" aria-controls="spinnyWheel"
+                                            aria-selected="true">Spinny Wheel</a></li>
+                                    <li style="display: none;"><a class="nav-link" id="messageCoder-tab"
+                                            data-toggle="tab" href="#messageCoder" role="tab"
+                                            aria-controls="messageCoder" aria-selected="true">Message Coder</a></li>
+                                    <li style="display: none;"><a class="nav-link" id="ThreeStrikes-tab-overflow"
+                                            data-toggle="tab" href="#ThreeStrikes" role="tab"
+                                            aria-controls="ThreeStrikes" aria-selected="true">3 Strikes</a></li>
+                                    <li style="display: none;"><a class="nav-link" id="factorGame-tab-overflow"
+                                            data-toggle="tab" href="#factorGame" role="tab" aria-controls="factorGame"
+                                            aria-selected="true">Factor Game</a>
+                                    </li>
+                                    <li style="display: none;"><a class="nav-link" id="photoPainter-tab-overflow"
+                                            data-toggle="tab" href="#photoPainter" role="tab"
+                                            aria-controls="photoPainter" aria-selected="true">Photo
+                                            Painter</a></li>
+                                    <li style="display: none;"><a class="nav-link" id="trumpainter-tab-overflow"
+                                            data-toggle="tab" href="#trumpainter" role="tab" aria-controls="trumpainter"
+                                            aria-selected="true">Trump Painter</a>
+                                    </li>
+                                    <li style="display: none;"><a class="nav-link" id="trumpDodge-tab-overflow"
+                                            data-toggle="tab" href="#trumpDodge" role="tab" aria-controls="trumpDodge"
+                                            aria-selected="true">Trump Dodge</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="policy_content">
+
+                        <div class="tab-content" id="policy_tabs-content">
+                            <div class="tab-pane fade show active" id="spinnyWheel" role="tabpanel"
+                                aria-labelledby="spinnywheel-tab">
+                                <div class="policy_border">
+                                    <h2 class="western">
+                                        Privacy Policy</h2>
+                                    <div id="privacy_content" dir="ltr">
+                                        <p>Nicholas Ekle built the Spinny
+                                            Wheel app as an Ad Supported app. This SERVICE is provided by
+                                            Nicholas Ekle at no cost and is intended for use as is.
+                                        </p>
+                                        <p>This page is used to inform visitors regarding my policies with
+                                            the collection, use, and disclosure of Personal Information if
+                                            anyone decided to use my Service.
+                                        </p>
+                                        <p>If you choose to use my Service, then you agree to the collection
+                                            and use of information in relation to this policy. The Personal
+                                            Information that I collect is used for providing and improving the
+                                            Service. I will not use or share your information with anyone except
+                                            as described in this Privacy Policy.
+                                        </p>
+                                        <p>The terms used in this Privacy Policy have the same meanings as
+                                            in our Terms and Conditions, which is accessible at Spinny Wheel
+                                            unless otherwise defined in this Privacy Policy.
+                                        </p>
+                                        <p><strong>Information Collection and Use</strong></p>
+                                        <p>For a better experience, while using our Service, I may require
+                                            you to provide us with certain personally identifiable information,
+                                            including but not limited to Android advertising ID. The information
+                                            that I request will be retained on your device and is not collected
+                                            by me in any way.
+                                        </p>
+                                        <p>The app does use third party services that may collect
+                                            information used to identify you.</p>
+                                        <p>Link to privacy policy of third party service providers used by
+                                            the app</p>
+                                        <ul>
+                                            <li>
+                                                <p style="margin-bottom: 0in"><a
+                                                        href="https://www.google.com/policies/privacy/"
+                                                        target="_blank">Google
+                                                        Play Services</a></p>
+                                            <li>
+                                                <p style="margin-bottom: 0in"><a
+                                                        href="https://support.google.com/admob/answer/6128543?hl=en"
+                                                        target="_blank">AdMob</a></p>
+                                            <li>
+                                                <p><a href="https://firebase.google.com/policies/analytics"
+                                                        target="_blank">Firebase
+                                                        Analytics</a></p>
+                                        </ul>
+                                        <p><strong>Log Data</strong></p>
+                                        <p>I want to inform you that whenever you use my Service, in a case
+                                            of an error in the app I collect data and information (through third
+                                            party products) on your phone called Log Data. This Log Data may
+                                            include information such as your device Internet Protocol (“IP”)
+                                            address, device name, operating system version, the configuration of
+                                            the app when utilizing my Service, the time and date of your use of
+                                            the Service, and other statistics.
+                                        </p>
+                                        <p><strong>Cookies</strong></p>
+                                        <p>Cookies are files with a small amount of data that are commonly
+                                            used as anonymous unique identifiers. These are sent to your browser
+                                            from the websites that you visit and are stored on your device's
+                                            internal memory.
+                                        </p>
+                                        <p>This Service does not use these “cookies” explicitly.
+                                            However, the app may use third party code and libraries that use
+                                            “cookies” to collect information and improve their services. You
+                                            have the option to either accept or refuse these cookies and know
+                                            when a cookie is being sent to your device. If you choose to refuse
+                                            our cookies, you may not be able to use some portions of this
+                                            Service.
+                                        </p>
+                                        <p><strong>Service Providers</strong></p>
+                                        <p>I may employ third-party companies and individuals due to the
+                                            following reasons:</p>
+                                        <ul>
+                                            <li>
+                                                <p style="margin-bottom: 0in">To facilitate our Service;
+                                                </p>
+                                            <li>
+                                                <p style="margin-bottom: 0in">To provide the Service on our
+                                                    behalf;
+                                                </p>
+                                            <li>
+                                                <p style="margin-bottom: 0in">To perform Service-related
+                                                    services; or
+                                                </p>
+                                            <li>
+                                                <p>To assist us in analyzing how our Service is used.</p>
+                                        </ul>
+                                        <p>I want to inform users of this Service that these third parties
+                                            have access to your Personal Information. The reason is to perform
+                                            the tasks assigned to them on our behalf. However, they are
+                                            obligated not to disclose or use the information for any other
+                                            purpose.
+                                        </p>
+                                        <p><strong>Security</strong></p>
+                                        <p>I value your trust in providing us your Personal Information,
+                                            thus we are striving to use commercially acceptable means of
+                                            protecting it. But remember that no method of transmission over the
+                                            internet, or method of electronic storage is 100% secure and
+                                            reliable, and I cannot guarantee its absolute security.
+                                        </p>
+                                        <p><strong>Links to Other Sites</strong></p>
+                                        <p>This Service may contain links to other sites. If you click on a
+                                            third-party link, you will be directed to that site. Note that these
+                                            external sites are not operated by me. Therefore, I strongly advise
+                                            you to review the Privacy Policy of these websites. I have no
+                                            control over and assume no responsibility for the content, privacy
+                                            policies, or practices of any third-party sites or services.
+                                        </p>
+                                        <p><strong>Children’s Privacy</strong></p>
+                                        <p>These Services do not address anyone under the age of 13. I do
+                                            not knowingly collect personally identifiable information from
+                                            children under 13. In the case I discover that a child under 13 has
+                                            provided me with personal information, I immediately delete this
+                                            from our servers. If you are a parent or guardian and you are aware
+                                            that your child has provided us with personal information, please
+                                            contact me so that I will be able to do necessary actions.
+                                        </p>
+                                        <p><strong>Changes to This Privacy Policy</strong></p>
+                                        <p>I may update our Privacy Policy from time to time. Thus, you are
+                                            advised to review this page periodically for any changes. I will
+                                            notify you of any changes by posting the new Privacy Policy on this
+                                            page. These changes are effective immediately after they are posted
+                                            on this page.
+                                        </p>
+                                        <p><strong>Contact Us</strong></p>
+                                        <p>If you have any questions or suggestions about my Privacy Policy,
+                                            do not hesitate to contact me at enterprise.ekle@yahoo.com.
+                                        </p>
+                                        <p>This privacy policy page was created at <a
+                                                href="https://privacypolicytemplate.net/"
+                                                target="_blank">privacypolicytemplate.net</a>
+                                            and modified/generated by <a
+                                                href="https://app-privacy-policy-generator.firebaseapp.com/"
+                                                target="_blank">App
+                                                Privacy Policy Generator</a></p>
+                                    </div>
+                                    <p style="margin-bottom: 0in; line-height: 100%"><br />
+
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="tab-pane fade" id="messageCoder" role="tabpanel"
+                                aria-labelledby="messageCoder-tab messageCoder-tab-overflow">
+                                <div class="policy_border">
+                                    <h2>Message Coder</h2>
+                                    <p>Message Coder does not have a privacy policy at this time</p>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="ThreeStrikes" role="tabpanel"
+                                aria-labelledby="ThreeStrikes-tab ThreeStrikes-tab-overflow">
+                                <div class="policy_border">
+                                    <h2>3 Strikes</h2>
+                                    <p>3 Strikes does not have a privacy policy at this time</p>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="factorGame" role="tabpanel"
+                                aria-labelledby="factorGame-tab factorGame-tab-overflow">
+                                <div class="policy_border">
+                                    <h2>Factoring Game</h2>
+                                    <p>Factoring Game does not have a privacy policy at this time</p>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="photoPainter" role="tabpanel"
+                                aria-labelledby="photoPainter-tab photoPainter-tab-overflow">
+                                <div class="policy_border">
+                                    <h2>Photo Painter</h2>
+                                    <p>Photo Painter does not have a privacy policy at this time</p>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="trumpainter" role="tabpanel"
+                                aria-labelledby="trumpainter-tab trumpainter-tab-overflow">
+                                <div class="policy_border">
+                                    <h2>Trump Painter</h2>
+                                    <p>Trump Painter does not have a privacy policy at this time</p>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="trumpDodge" role="tabpanel"
+                                aria-labelledby="trumpDodge-tab trumpDodge-tab-overlfow">
+                                <div class="policy_border">
+                                    <h2>Trump Dodge</h2>
+                                    <p>Trump Dodge does not have a privacy policy at this time</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+
+    <script>
+        // Javascript to enable link to tab
+        var hash = document.location.hash;
+        var prefix = "to_";
+        if (hash) {
+            $('.nav-tabs a[href="' + hash.replace(prefix, "") + '"]').tab('show');
+        }
+        // Change hash for page-reload
+        $('.nav-tabs a').on('shown.bs.tab', function (e) {
+            window.location.hash = e.target.hash.replace("#", "#" + prefix);
+        });
+
+
+        $("a.nav-link").on("click", function () {
+            $("#policy_tab_overflow").get(0).innerText = "More ";
+            var a = this;
+            $(".dropdown-menu a.nav-link").each(function () {
+                if (this === a) return;
+                this.classList.remove("active");
+            });
+        });
+
+        $(".dropdown-menu a.nav-link").each(function () {
+            this.addEventListener("click", function () {
+                $("#policy_tab_overflow").get(0).innerText = this.innerText + " ";
+            });
+        });
+
+    </script>
+
+    <script>
+
+        function handleResize() {
+            $("#policy_tabs > li").show();
+            $("#policy_tabs .dropdown").hide();
+            $("#policy_tabs .dropdown-menu li").hide();
+
+            var width = $("#policy_tabs").width();
+            var tmpWidth = 0;
+            var moreWidth = 80;
+
+            $("#policy_tabs > li").each(function () {
+                tmpWidth += $(this).width();
+
+                if (tmpWidth + moreWidth > width) {
+                    $(this).hide();
+                    $("#policy_tabs > .dropdown").show();
+                    $("#policy_tabs .dropdown-menu li a[href='" + $(this).find('a').attr('href') + "']").parent().show();
+                }
+                return;
+            });
+        }
+
+        handleResize();
+
+        $(window).resize(handleResize);
+    </script>
+
+
+</body>
+
+</html>

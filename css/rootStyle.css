@@ -1,0 +1,131 @@
+.header{
+    width:100%;
+    margin: 0px;
+    /* padding: 0px; */
+    background: #2196F3;
+    border: 2px #2196F3 inset;
+    
+}
+
+.header_eklelogo{
+    width:90px;
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+
+.header_title{
+    color: white;
+    margin: 16px;
+    /* margin-left: 35px; */
+    margin-bottom: 16px;
+    /* position: sticky; */
+}
+
+.header_nav_list_align_bottom{
+    margin-top: auto;
+}
+
+.header_nav_list{
+    color: white;
+    vertical-align: bottom;
+    margin-bottom: 16px;
+    text-align: right;
+}
+
+.header_nav_list_item{
+    display:inline;
+    color:white;
+}
+
+.header_nav_list_link{
+    color:white;
+}
+
+.header_nav_list_item_selected{
+    text-decoration: underline;
+    /* color: white; */
+}
+
+.content{
+    margin-top:0px;
+    
+}
+
+
+.app_panel_divider{
+    width: 60%;
+}
+
+.app_panel{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.app_promoVideo{
+    margin: auto;
+}
+
+.app_promoVideo_centerer{
+    margin: auto;
+    text-align: center;
+}
+
+.app_promoVideo_embed{
+    padding:0px;
+    /* margin: auto; */
+    text-align: center;
+}
+
+.app_feature_image_holder{
+    margin-bottom: 5px;
+    text-align: center;
+}
+.app_feature_image{
+    width:560px;
+}
+
+.app_title{
+
+}
+
+.app_info_holder{
+    margin:auto;
+}
+
+.app_info{
+    
+}
+
+
+.app_install_button{
+    width: 202px;
+    
+}
+
+.app_install_button_holder{
+    margin: auto;
+    text-align: center;
+}
+
+.app_icon{
+    width: 117px;
+}
+
+
+
+.policy_frame{
+    margin:10px;
+    width: 100%;
+}
+
+.policy_border{
+    margin: 20px;
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+.policy_content{
+    border: 1px solid #dee2e6;
+    border-top: none;
+}
