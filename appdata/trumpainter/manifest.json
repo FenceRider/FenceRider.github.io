@@ -1,0 +1,175 @@
+{
+    "message": "Hello Fellow Trumpainters .",
+    "categories": [
+        {   
+            "name":"Corona",
+            "id": 1,
+            "product_id":"cat_corona",
+            "paid":true,
+            "category_icon":"appdata/trumpainter/packs/corona/virus.png",
+            "brushes":[
+                "appdata/trumpainter/packs/corona/virus.png",
+                "appdata/trumpainter/packs/corona/fauci2.png",
+                "appdata/trumpainter/packs/corona/faucii.png",
+                "appdata/trumpainter/packs/corona/mask.png",
+                "appdata/trumpainter/packs/corona/beer.png",
+                "appdata/trumpainter/packs/corona/bat.png",
+                "appdata/trumpainter/packs/corona/paperpack.png",
+                "appdata/trumpainter/packs/corona/toiletpaper.png"
+
+
+            ] 
+
+        },
+        {
+            "name":"International",
+            "id": 1,
+            "product_id":"cat_international",
+            "paid":true,
+            "category_icon":"appdata/trumpainter/packs/international/cat.png",
+            "brushes":[
+                "appdata/trumpainter/packs/international/kim.png",
+                "appdata/trumpainter/packs/international/merkal.png",
+                "appdata/trumpainter/packs/international/modi.png",
+                "appdata/trumpainter/packs/international/putin.png",
+                "appdata/trumpainter/packs/international/putin2.png",
+                "appdata/trumpainter/packs/international/xi.png"
+            ]
+
+        },
+        {
+            "name":"North Korea",
+            "id": 1,
+            "product_id":"cat_northkorea",
+            "paid":true,
+            "category_icon":"appdata/trumpainter/packs/northkorea/cat.png",
+            "brushes":[
+                "appdata/trumpainter/packs/northkorea/kim1.png",
+                "appdata/trumpainter/packs/northkorea/kim2.png",
+                "appdata/trumpainter/packs/northkorea/kim3.png",
+                "appdata/trumpainter/packs/northkorea/missiletruck.png",
+                "appdata/trumpainter/packs/northkorea/flag.png"
+            ]
+        },
+
+        {
+            "name":"Trump Family",
+            "id": 1,
+            "product_id":"cat_trumpfamily",
+            "paid":true,
+            "category_icon":"appdata/trumpainter/packs/trumpfamily/caticon.png",
+            "brushes":[
+                "appdata/trumpainter/packs/trumpfamily/ivanka4.png",
+                "appdata/trumpainter/packs/trumpfamily/jr2.png",
+                "appdata/trumpainter/packs/trumpfamily/jr3.png",
+                "appdata/trumpainter/packs/trumpfamily/ivanka3.png",
+                "appdata/trumpainter/packs/trumpfamily/tiff1.png",
+                "appdata/trumpainter/packs/trumpfamily/eric2.png",
+                "appdata/trumpainter/packs/trumpfamily/melania.png",
+                "appdata/trumpainter/packs/trumpfamily/melania2.png"
+                
+                
+            ]
+
+        },
+
+        {
+            "name": "Donald Trump",
+            "id": 1,
+            "paid":false,
+            "product_id":"cat_donaldtrump_free",
+
+            "brushes": [
+                "appdata/trumpainter/packs/trump/d21.png",
+                "appdata/trumpainter/packs/trump/d22.png",
+                "appdata/trumpainter/packs/trump/d23.png",
+                "appdata/trumpainter/packs/trump/d24.png",
+                "appdata/trumpainter/packs/trump/d25.png",
+                "appdata/trumpainter/packs/trump/d26.png",
+                "appdata/trumpainter/packs/trump/d27.png",
+                "appdata/trumpainter/packs/trump/d28.png",
+                "appdata/trumpainter/packs/trump/d29.png",
+                "appdata/trumpainter/packs/trump/d2.jpg",
+                "appdata/trumpainter/packs/trump/d30.png",
+                "appdata/trumpainter/packs/trump/d31.png",
+                "appdata/trumpainter/packs/trump/d32.png",
+                "appdata/trumpainter/packs/trump/d33.png",
+                "appdata/trumpainter/packs/trump/d34.png",
+                "appdata/trumpainter/packs/trump/d35.png",
+                "appdata/trumpainter/packs/trump/d36.png",
+                
+                "appdata/trumpainter/packs/trump/d3.jpg",
+                "appdata/trumpainter/packs/trump/d4.jpg",
+                "appdata/trumpainter/packs/trump/d5.jpg",
+                "appdata/trumpainter/packs/trump/d6.jpg",
+                "appdata/trumpainter/packs/trump/d7.jpg",
+                "appdata/trumpainter/packs/trump/d8.jpg",
+                "appdata/trumpainter/packs/trump/d9.jpg",
+                "appdata/trumpainter/packs/trump/d10.jpg",
+                "appdata/trumpainter/packs/trump/d11.jpg",
+                "appdata/trumpainter/packs/trump/d12.jpg",
+                "appdata/trumpainter/packs/trump/d13.jpg",
+                "appdata/trumpainter/packs/trump/d14.jpg",
+                "appdata/trumpainter/packs/trump/d15.jpg",
+                "appdata/trumpainter/packs/trump/d16.jpg",
+                "appdata/trumpainter/packs/trump/d17.jpg",
+                "appdata/trumpainter/packs/trump/d18.jpg",
+                "appdata/trumpainter/packs/trump/d19.jpg",
+                "appdata/trumpainter/packs/trump/d1.jpg",
+                "appdata/trumpainter/packs/trump/d20.jpg"
+            ]
+        },
+
+
+        {
+            "name": "Joe Biden",
+            "id": 2,
+            "paid":false,
+            "product_id":"cat_joebiden_free",
+            "category_icon":"appdata/trumpainter/packs/biden/joe6.png",
+            "brushes": [
+                "appdata/trumpainter/packs/biden/joe1.png",
+                "appdata/trumpainter/packs/biden/joe2.png",
+                "appdata/trumpainter/packs/biden/joe3.png",
+                "appdata/trumpainter/packs/biden/joe4.png",
+                "appdata/trumpainter/packs/biden/joe5.png",
+                "appdata/trumpainter/packs/biden/joe6.png",
+                "appdata/trumpainter/packs/biden/joe7.png"
+            ]
+        },
+       
+        {
+            "name": "Dropouts",
+            "id": 4,
+            "brushes": [
+                "appdata/trumpainter/packs/dropouts/b1.png",
+                "appdata/trumpainter/packs/dropouts/b2.png",
+                "appdata/trumpainter/packs/dropouts/b3.png",
+                "appdata/trumpainter/packs/dropouts/b4.png"
+
+
+            ]
+        },
+        {
+            "name": "2016",
+            "id": 5,
+            "brushes": [
+                "appdata/trumpainter/packs/2016/h2.png",
+                "appdata/trumpainter/packs/2016/h3.png",
+                "appdata/trumpainter/packs/2016/h4.png",
+                "appdata/trumpainter/packs/2016/h5.png",
+                "appdata/trumpainter/packs/2016/h6.png",
+                "appdata/trumpainter/packs/2016/t1.png",
+                "appdata/trumpainter/packs/2016/t2.png",
+                "appdata/trumpainter/packs/2016/t3.png",
+                "appdata/trumpainter/packs/2016/t4.png"
+
+            ]
+        },
+        {
+            "name": "Props",
+            "id": 7,
+            "brushes": []
+        }
+    ]
+}
