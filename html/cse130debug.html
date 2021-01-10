@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>130 Debug!</title>
+  <link rel="stylesheet" href="/css/dark.css">
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">
+        Debugging Pintos Visually
+      </h1>
+
+      <img style="display: block; margin-left: auto; margin-right: auto;" src=/res/130debug.png>
+
+      <br>
+
+      
+      <div class="title">Steps</div>
+      <hr>
+      <div class="columns  is-centered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            <div>Step 1</div>
+            
+            
+          </div>
+        </div>
+        <div class="column is-one-half">
+          <div>Open VSCode from the 'pintos' folder you copied to your home directory</div>
+            <br>
+            <div>Otherwise all the config paths will be messed up</div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="columns  is-centered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            <div>Step 2</div>
+            <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">Install Cpp
+                  extension</a>
+            
+          </div>
+        </div>
+        <div class="column is-one-half">
+          <img style="margin-left:auto; margin-right:auto; display:block" src="/res/130cppext.png"/>
+        </div>
+      </div>
+
+      <hr>
+      <div class="columns is-centered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            <div>Step 3</div>
+            <div>Add tasks.json</div>
+            
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div>structure</div>
+          <img src="/res/130dirstruct.png"/>
+        </div>
+        <div class="column is-half">
+          <div>.vscode/tasks.json</div>
+          <pre class="code">
+{
+ "tasks": [
+  {
+   "label": "make",
+   "type": "shell",
+   "command": "make -C ${workspaceFolder}/src/threads/"
+  },
+  {
+   "label": "host debug",
+   "type": "shell",
+   "command": "cd ${workspaceFolder}/src/threads && ${workspaceFolder}/src/utils/pintos --gdb --gdb-port=1025 -v -k -T 20 --qemu  -- -q  run alarm-single",
+   "dependsOn": "make",
+   "isBackground": true,
+   "problemMatcher": {
+    "pattern": {
+     "regexp": "(qemu-system-i386)",
+     "line": 1
+    },
+    "background": {
+     "activeOnStart": true,
+     "beginsPattern": "(qemu-system-i386)",
+     "endsPattern": "(qemu-system-i386)"
+    }
+   }
+  }
+ ],
+ "version": "2.0.0"
+}
+</pre>
+        </div>
+        
+      </div>
+
+
+      <hr>
+      <div class="columns  is-centered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            <div>Step 4</div>
+            <div>Add launch.json</div>
+            
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div>structure</div>
+          <img src="/res/130dirstruct.png"/>
+        </div>
+        <div class="column is-half">
+          <div>.vscode/launch.json</div>
+          <pre class="code">
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "build, host, and attach!",
+      "type": "cppdbg",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/src/threads",       
+      "miDebuggerServerAddress": "localhost:1025",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "program": "build/kernel.o",
+      "miDebuggerArgs": "-x ../utils/../misc/gdb-macros",
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+          
+      ],
+      "preLaunchTask": "host debug",
+    }
+  ]
+}
+</pre>
+        </div>
+        
+      </div>
+
+      <hr>
+      <div class="columns  is-centered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            <div>Step 5</div>
+            <div>
+              Select 'build, host, and attach!' from the debugger menu
+            </div>
+            <br>
+            <div>
+              Press the green play button or F5 on your keyboard 
+            </div>
+            
+          </div>
+        </div>
+        <div class="column is-three-quarters">
+          <img style="margin-left:auto; margin-right:auto; display:block" src="/res/130run.png"/>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+</body>
