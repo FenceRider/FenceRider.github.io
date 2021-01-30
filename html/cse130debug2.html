@@ -9,6 +9,15 @@
 </head>
 
 <body>
+  <script>
+    function skipto() {
+
+      window.location.hash = "setup"
+      history.replaceState(null, null, ' ');
+      
+    }
+
+  </script>
 
   <section class="section">
     <div class="container">
@@ -19,8 +28,62 @@
       <img style="display: block; margin-left: auto; margin-right: auto;" src=/res/130debug.png>
 
       <br>
+      <br>
 
-      <div class="title">Prerequisites</div>
+
+      <br>
+      <div class="title is-1">Why and How</div>
+      <p>Since we are not allowed to use Visual Studio Code's Remote-SSH feature and the sftp extensions have limited
+        functionality, I decided to leverage vsc's <a href="https://code.visualstudio.com/docs/editor/tasks" target="blank">task system</a> to create something very similar to Remote-SSH.
+        Below is a brief description of what tasks.json and launch.json are doing to accomplish this goal. If you'd
+        rather just get your environment set up: </p>
+      <button class="button is-success" onclick="skipto()"> skip to the set up process </button>
+      <br><br>
+      <p>These tasks (.vscode/tasks.json) work by copying local src files to the teaching server using <a
+          href="https://en.wikipedia.org/wiki/Rsync" target="blank"> rsync</a>. </p>
+      <pre>rsync -av ${workspaceFolder}/pintos/src thor:~/CSE130/Lab2/pintos/</pre>
+      <br><br>
+      <p>triggering make via ssh</p>
+      <pre>ssh thor 'cd ~/CSE130/Lab2/pintos/src/threads && make'</pre>
+      <br><br>
+      <p>and then starting up GDB such that it will wait and listen for connections on port 1025.</p>
+      <pre>ssh thor 'cd ~/CSE130/Lab2/pintos/src/threads && ~/CSE130/Lab2/pintos/src/utils/pintos --gdb --gdb-port=1025 -v -k -T 20 --qemu  -- -q  run ${input:test} </pre>
+      <br><br>
+
+      <p>In order to connect though, we have to open an <a href="https://www.ssh.com/ssh/tunneling/example"
+          target="blank">ssh tunnel</a>. This is because we are trying to access a program running on the server from
+        our local machine. </p>
+      <pre>ssh -L 1025:localhost:1025 thor</pre>
+      <br><br>
+
+      <p>This makes it so that localhost:1025 on our local machine is connected to port 1025 on the remote server. Which
+        by design, is the port that GDB is listening on. <br>
+        Now that we have a way to communicate to the server, the launch task can connect using GDB as if we were running
+        everything on our own local machine.</p>
+
+      <br><br>
+
+      <p>In order to avoid having to enter passwords over and over again, all of the commands relying on ssh take
+        advantage of <a href="https://linux.die.net/man/1/sshpass" target="blank">sshpass</a>. Sshpass essentially
+        forwards a plain text password to any ssh command.</p>
+
+      <pre>sshpass -p &ltpassword&gt ssh thor </pre>
+
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <div id="setup" class="has-text-centered title is-1">Set Up</div>
+
+      <div id="setup" class="notification is-warning title is-4 has-text-centered">
+
+        Please make a back up of your Lab2 Folder before following this tutorial
+      </div>
+      <br>
+
+      <div class="title ">Prerequisites</div>
 
       <div class="columns  is-centered">
 
@@ -68,7 +131,7 @@
           <br>
           <div>CTRL-X to exit, y to save</div>
         </div>
-        
+
         <div class="column is-one-quarter">
           <img style="margin-left:auto; margin-right:auto; display:block" src="/res/example_ssh_config.png" />
         </div>
@@ -101,12 +164,12 @@
         <div class="column is-one-quarter">
           <div class="content">
             <div>Step 3</div>
-            
+
           </div>
         </div>
         <div class="column is-one-quarter">
           <div><span class="tag is-danger">Important</span></div>
-        <br>
+          <br>
           <div>Open VSCode from the 'Lab2' folder you just copied to your local machine</div>
           <br>
           <div>Otherwise all the config paths will be messed up</div>
