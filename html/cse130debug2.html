@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>130 Debug!</title>
+  <link rel="stylesheet" href="/css/dark.css">
+</head>
+
+<body>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">
+        Debugging Pintos Visually
+      </h1>
+
+      <img style="display: block; margin-left: auto; margin-right: auto;" src=/res/130debug.png>
+
+      <br>
+
+      <div class="title">Prerequisites</div>
+
+      <div class="columns  is-centered">
+
+        <div class="column is-one-quarter">
+          <div class="box">
+            <h3 class="subtitle is-3">Windows</h3>
+            <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Install WSL</a> </br>
+            then follow linux
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="box">
+            <h3 class="subtitle is-3">Mac OS</h3>
+            <a href="https://stackoverflow.com/questions/32255660/how-to-install-sshpass-on-mac">Install SSHPass</a>
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="box">
+            <h3 class="subtitle is-3">Linux</h3>
+            <div>sudo apt-get install sshpass</div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+      <div class="title">Steps</div>
+      <hr>
+
+      <div class="columns  is-centered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            <div>Step 1</div>
+            <div>Modify your .ssh config so that it looks like the picture.</div>
+
+
+          </div>
+        </div>
+        <div class="column is-one-half">
+          <pre>nano ~/.ssh/config</pre>
+          <br>
+          <div>This will open the nano editor</div>
+          <br>
+          <div>CTRL-X to exit, y to save</div>
+        </div>
+        
+        <div class="column is-one-quarter">
+          <img style="margin-left:auto; margin-right:auto; display:block" src="/res/example_ssh_config.png" />
+        </div>
+
+      </div>
+
+      <hr>
+
+
+      <div class="columns  is-centered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            <div>Step 2</div>
+            <div>run the following command to clone Lab2 to your local machine</div>
+
+          </div>
+        </div>
+        <div class="column is-one-half">
+          <pre>scp -r thor:~/CSE130/Lab2 .</pre>
+          <br>
+          <div>This will copy Lab2 to the folder your command line is at.</div>
+          <br>
+          <div>This is your new working directory</div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="columns  is-centered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            <div>Step 3</div>
+            
+          </div>
+        </div>
+        <div class="column is-one-quarter">
+          <div><span class="tag is-danger">Important</span></div>
+        <br>
+          <div>Open VSCode from the 'Lab2' folder you just copied to your local machine</div>
+          <br>
+          <div>Otherwise all the config paths will be messed up</div>
+        </div>
+        <div class="column is-one-half has-text-centered">
+          <img style="margin-left:auto; margin-right:auto; display:block" src="/res/vscodeOpenFolder.png" />
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="columns  is-centered">
+        <div class="column is-one-quarter text">
+          <div class="content">
+            <div>Step 4</div>
+            <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">Install Cpp
+              extension</a>
+
+          </div>
+        </div>
+        <div class="column is-one-half">
+          <img style="margin-left:auto; margin-right:auto; display:block" src="/res/130cppext.png" />
+        </div>
+      </div>
+
+      <hr>
+      <div class="columns is-centered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            <div>Step 5</div>
+            <div>Download and extract this .vscode file and place it in your project structure like so.</div>
+            <br />
+            <a class="has-text-centered" href="/res/vscode.zip" download>
+              <div>
+                <img src="/res/folder-download.png" alt="W3Schools" width="104" height="142">
+                <p>.vscode</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="column is-one-half has-text-centered">
+          <div>structure</div>
+          <img src="/res/130debug2.png" />
+        </div>
+
+
+      </div>
+
+      <hr>
+
+      <div class="columns  is-centered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            <div>Step 6</div>
+            <div>
+              Replace password in .vscode/settings.json with your ssh password.
+            </div>
+            <br>
+
+
+          </div>
+        </div>
+        <div class="column is-three-quarters">
+          <img style="margin-left:auto; margin-right:auto; display:block" src="/res/set_password.png" />
+        </div>
+      </div>
+
+
+      <hr>
+
+      <div class="columns  is-centered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            <div>Step 7</div>
+            <div>
+              Open an SSH tunnel to the teaching server
+            </div>
+
+            <div>
+              CTRL - SHIFT - B and select tunnel
+            </div>
+            <br />
+            <article class="message is-warning">
+              <div class="message-body">
+                The tunnel is configured to run on launch by default, however you must allow this when the notificaiton
+                appears.
+              </div>
+            </article>
+
+          </div>
+        </div>
+        <div class="column is-three-quarters">
+          <img style="margin-left:auto; margin-right:auto; display:block" src="/res/build_chooser.png" />
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="columns  is-centered">
+        <div class="column is-one-quarter">
+          <div class="content">
+            <div>Step 8</div>
+            <div>
+              Select 'build, host, and attach!' from the debugger menu
+            </div>
+            <br>
+            <div>
+              Press the green play button or F5 on your keyboard
+            </div>
+
+          </div>
+        </div>
+        <div class="column is-three-quarters">
+          <img style="margin-left:auto; margin-right:auto; display:block" src="/res/130run.png" />
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+</body>
