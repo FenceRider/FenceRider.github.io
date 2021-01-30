@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>130 Debug!</title>
   <link rel="stylesheet" href="/css/dark.css">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fencerider.github.io/html/cse130debug2.html">
+  <meta property="og:title" content="Debugging Pintos Visually">
+  <meta property="og:description"
+    content="Debugging Pintos Visually">
+  <meta property="og:image" content="https://fencerider.github.io/res/130debug.png">
+
+
 </head>
 
 <body>
@@ -14,7 +22,7 @@
 
       window.location.hash = "setup"
       history.replaceState(null, null, ' ');
-      
+
     }
 
   </script>
@@ -34,7 +42,8 @@
       <br>
       <div class="title is-1">Why and How</div>
       <p>Since we are not allowed to use Visual Studio Code's Remote-SSH feature and the sftp extensions have limited
-        functionality, I decided to leverage vsc's <a href="https://code.visualstudio.com/docs/editor/tasks" target="blank">task system</a> to create something very similar to Remote-SSH.
+        functionality, I decided to leverage vsc's <a href="https://code.visualstudio.com/docs/editor/tasks"
+          target="blank">task system</a> to create something very similar to Remote-SSH.
         Below is a brief description of what tasks.json and launch.json are doing to accomplish this goal. If you'd
         rather just get your environment set up: </p>
       <button class="button is-success" onclick="skipto()"> skip to the set up process </button>
