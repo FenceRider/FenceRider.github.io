@@ -1,0 +1,656 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects</title>
+    <link rel="stylesheet" href="/css/bulma.css">
+    <link rel="stylesheet" href="/css/fa/css/all.min.css">
+    <link rel="stylesheet" href="/css/ekle2.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+
+</head>
+
+<body>
+
+
+
+
+    <nav class="navbar" role="navigation" aria-label="main_navigation" style="background: #2196F3;">
+        <div class="navbar-brand ">
+            <a class="navbar-item has-text-light" href="/html/home.html">
+                <img class="mr-2" src="/res/Avatar.png" width="" height="112">
+                <strong>Ekle Enterprise</strong>
+            </a>
+
+            <a role="button" class="navbar-burger has-text-light" aria-label="menu" aria-expanded="false"
+                data-target="main_navbar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="main_navbar" class="navbar-menu" style="background: #2196F3;">
+            <div class="navbar-start">
+                <a class="navbar-item has-text-light" href="/html/home.html">
+                    <strong>Home</strong>
+                </a>
+
+                <a class="navbar-item has-text-light" href="/html/projects.html">
+                    <strong>Projects</strong>
+                </a>
+
+                <a class="navbar-item has-text-light" href="/html/tutorials.html">
+                    <strong> Tutorials </strong>
+                </a>
+
+                <a class="navbar-item has-text-light" href="/html/privacy.html">
+                    <strong>Privacy</strong>
+                </a>
+
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary" href="/html/contact.html">
+                            <strong>Contact</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+
+
+    <style>
+        code {
+            
+            
+            
+        }
+
+        .code_wrap{
+            background:#f5f5f5 ;
+            white-space: pre-wrap;
+            overflow: scroll;
+            text-overflow: clip;
+            
+        }
+    </style>
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <div class="columns">
+                <aside id="projects" class="aside menu column is-2">
+                    <p class="menu-label">
+                        CSE 130 Debugging Pintos VSC
+                    </p>
+                    <ul class="menu-list">
+                        <li><a class="is-active" onclick="to_projct(this,'tutorial_vsc_130_no_remote_container')">No Remote Container</a></li>
+                        <li><a onclick="to_projct(this,'tutorial_vsc_130_with_remote_container')">Remote Container</a></li>
+
+                    </ul>
+                </aside>
+                <div class="column">
+                    <div id="tutorial_vsc_130_with_remote_container" class="project_hidden">
+                        <div class="">
+                            <h1 class="title has-text-centered">
+                                Debugging Pintos Visually
+                            </h1>
+
+                            <img style="display: block; margin-left: auto; margin-right: auto;" src=/res/130debug.png>
+
+                            <br>
+
+
+                            <div class="title">Steps</div>
+                            <hr>
+                            <div class="columns  is-centered">
+                                <div class="column is-one-quarter">
+                                    <div class="content">
+                                        <div>Step 1</div>
+
+
+                                    </div>
+                                </div>
+                                <div class="column is-one-half">
+                                    <div>Open VSCode from the 'pintos' folder you copied to your home directory</div>
+                                    <br>
+                                    <div>Otherwise all the config paths will be messed up</div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="columns  is-centered">
+                                <div class="column is-one-quarter">
+                                    <div class="content">
+                                        <div>Step 2</div>
+                                        <a
+                                            href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">Install
+                                            Cpp
+                                            extension</a>
+
+                                    </div>
+                                </div>
+                                <div class="column is-one-half">
+                                    <img style="margin-left:auto; margin-right:auto; display:block"
+                                        src="/res/130cppext.png" />
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="columns is-centered">
+                                <div class="column is-one-quarter">
+                                    <div class="content">
+                                        <div>Step 3</div>
+                                        <div>Add tasks.json</div>
+
+                                    </div>
+                                </div>
+                                <div class="column is-one-quarter">
+                                    <div>structure</div>
+                                    <img src="/res/130dirstruct.png" />
+                                </div>
+                                <div class="column is-half">
+                                    <div>.vscode/tasks.json</div>
+                                    <div class="code_wrap">
+                                        
+{
+ "tasks": [
+  {
+   "label": "make",
+   "type": "shell",
+   "command": "make -C ${workspaceFolder}/src/threads/"
+  },
+  {
+   "label": "host debug",
+   "type": "shell",
+   "command": "cd ${workspaceFolder}/src/threads && ${workspaceFolder}/src/utils/pintos --gdb --gdb-port=1025 -v -k -T 20 --qemu  -- -q  run alarm-single",
+   "dependsOn": "make",
+   "isBackground": true,
+   "problemMatcher": {
+    "pattern": {
+     "regexp": "(qemu-system-i386)",
+     "line": 1
+    },
+    "background": {
+     "activeOnStart": true,
+     "beginsPattern": "(qemu-system-i386)",
+     "endsPattern": "(qemu-system-i386)"
+    }
+   }
+  }
+ ],
+ "version": "2.0.0"
+}
+                      
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <hr>
+                            <div class="columns  is-centered">
+                                <div class="column is-one-quarter">
+                                    <div class="content">
+                                        <div>Step 4</div>
+                                        <div>Add launch.json</div>
+
+                                    </div>
+                                </div>
+                                <div class="column is-one-quarter">
+                                    <div>structure</div>
+                                    <img src="/res/130dirstruct.png" />
+                                </div>
+                                <div class="column is-half">
+                                    <div>.vscode/launch.json</div>
+                                    <div class="code_wrap">
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "build, host, and attach!",
+      "type": "cppdbg",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/src/threads",       
+      "miDebuggerServerAddress": "localhost:1025",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "program": "build/kernel.o",
+      "miDebuggerArgs": "-x ../utils/../misc/gdb-macros",
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+          
+      ],
+      "preLaunchTask": "host debug",
+    }
+  ]
+}
+                      </div>
+                                </div>
+
+                            </div>
+
+                            <hr>
+                            <div class="columns  is-centered">
+                                <div class="column is-one-quarter">
+                                    <div class="content">
+                                        <div>Step 5</div>
+                                        <div>
+                                            Select 'build, host, and attach!' from the debugger menu
+                                        </div>
+                                        <br>
+                                        <div>
+                                            Press the green play button or F5 on your keyboard
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="column is-three-quarters">
+                                    <img style="margin-left:auto; margin-right:auto; display:block"
+                                        src="/res/130run.png" />
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div id="tutorial_vsc_130_no_remote_container" class="project_active">
+                        
+                        <script>
+                            function skipto() {
+                        
+                              window.location.hash = "setup"
+                              history.replaceState(null, null, ' ');
+                        
+                            }
+                        
+                          </script>
+                        
+                        <div class="container">
+                            <h1 class="title has-text-centered">
+                                Debugging Pintos Visually
+                            </h1>
+
+                            <img style="display: block; margin-left: auto; margin-right: auto;" src=/res/130debug.png>
+
+                            <br>
+                            <br>
+
+
+                            <br>
+                            <div class="title is-1">Why and How</div>
+                            <p>Since we are not allowed to use Visual Studio Code's Remote-SSH feature and the sftp
+                                extensions have limited
+                                functionality, I decided to leverage vsc's <a
+                                    href="https://code.visualstudio.com/docs/editor/tasks" target="blank">task
+                                    system</a> to create something very similar to Remote-SSH.
+                                Below is a brief description of what tasks.json and launch.json are doing to accomplish
+                                this goal. If you'd
+                                rather just get your environment set up: </p>
+                            <button class="button is-success" onclick="skipto()"> skip to the set up process </button>
+                            <br><br>
+                            <p>These tasks (.vscode/tasks.json) work by copying local src files to the teaching server
+                                using <a href="https://en.wikipedia.org/wiki/Rsync" target="blank"> rsync</a>. </p>
+                            <code>rsync -av ${workspaceFolder}/pintos/src thor:~/CSE130/Lab2/pintos/</code>
+                            <br><br>
+                            <p>triggering make via ssh</p>
+                            <code>ssh thor 'cd ~/CSE130/Lab2/pintos/src/threads && make'</code>
+                            <br><br>
+                            <p>and then starting up GDB such that it will wait and listen for connections on port 1025.
+                            </p>
+                            <code>ssh thor 'cd ~/CSE130/Lab2/pintos/src/threads && ~/CSE130/Lab2/pintos/src/utils/pintos --gdb --gdb-port=1025 -v -k -T 20 --qemu  -- -q  run ${input:test} </code>
+                            <br><br>
+
+                            <p>In order to connect though, we have to open an <a
+                                    href="https://www.ssh.com/ssh/tunneling/example" target="blank">ssh tunnel</a>. This
+                                is because we are trying to access a program running on the server from
+                                our local machine. </p>
+                            <code>ssh -L 1025:localhost:1025 thor</code>
+                            <br><br>
+
+                            <p>This makes it so that localhost:1025 on our local machine is connected to port 1025 on
+                                the remote server. Which
+                                by design, is the port that GDB is listening on. <br>
+                                Now that we have a way to communicate to the server, the launch task can connect using
+                                GDB as if we were running
+                                everything on our own local machine.</p>
+
+                            <br><br>
+
+                            <p>In order to avoid having to enter passwords over and over again, all of the commands
+                                relying on ssh take
+                                advantage of <a href="https://linux.die.net/man/1/sshpass" target="blank">sshpass</a>.
+                                Sshpass essentially
+                                forwards a plain text password to any ssh command.</p>
+
+                            <code>sshpass -p &ltpassword&gt ssh thor </code>
+
+
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+
+                            <div id="setup" class="has-text-centered title is-1">Set Up</div>
+
+                            <div id="setup" class="notification is-warning title is-4 has-text-centered">
+
+                                Please make a back up of your Lab2 Folder before following this tutorial
+                            </div>
+                            <br>
+
+                            <div class="title ">Prerequisites</div>
+
+                            <div class="columns  is-centered">
+
+                                <div class="column is-one-quarter">
+                                    <div class="box">
+                                        <h3 class="subtitle is-3">Windows</h3>
+                                        <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Install
+                                            WSL</a> </br>
+                                        then follow linux
+                                    </div>
+                                </div>
+                                <div class="column is-one-quarter">
+                                    <div class="box">
+                                        <h3 class="subtitle is-3">Mac OS</h3>
+                                        <a
+                                            href="https://stackoverflow.com/questions/32255660/how-to-install-sshpass-on-mac">Install
+                                            SSHPass</a>
+                                    </div>
+                                </div>
+                                <div class="column is-one-quarter">
+                                    <div class="box">
+                                        <h3 class="subtitle is-3">Linux</h3>
+                                        <div>sudo apt-get install sshpass</div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="title">Steps</div>
+                            <hr>
+
+                            <div class="columns  is-centered">
+                                <div class="column is-one-quarter">
+                                    <div class="content">
+                                        <div>Step 1</div>
+                                        <div>Modify your .ssh config so that it looks like the picture.</div>
+
+
+                                    </div>
+                                </div>
+                                <div class="column is-one-half">
+                                    <code>nano ~/.ssh/config</code>
+                                    <br>
+                                    <div>This will open the nano editor</div>
+                                    <br>
+                                    <div>CTRL-X to exit, y to save</div>
+                                </div>
+
+                                <div class="column is-one-quarter">
+                                    <img style="margin-left:auto; margin-right:auto; display:block"
+                                        src="/res/example_ssh_config.png" />
+                                </div>
+
+                            </div>
+
+                            <hr>
+
+
+                            <div class="columns  is-centered">
+                                <div class="column is-one-quarter">
+                                    <div class="content">
+                                        <div>Step 2</div>
+                                        <div>run the following command to clone Lab2 to your local machine</div>
+
+                                    </div>
+                                </div>
+                                <div class="column is-one-half">
+                                    <code>scp -r thor:~/CSE130/Lab2 .</code>
+                                    <br>
+                                    <div>This will copy Lab2 to the folder your command line is at.</div>
+                                    <br>
+                                    <div>This is your new working directory</div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="columns  is-centered">
+                                <div class="column is-one-quarter">
+                                    <div class="content">
+                                        <div>Step 3</div>
+
+                                    </div>
+                                </div>
+                                <div class="column is-one-quarter">
+                                    <div><span class="tag is-danger">Important</span></div>
+                                    <br>
+                                    <div>Open VSCode from the 'Lab2' folder you just copied to your local machine</div>
+                                    <br>
+                                    <div>Otherwise all the config paths will be messed up</div>
+                                </div>
+                                <div class="column is-one-half has-text-centered">
+                                    <img style="margin-left:auto; margin-right:auto; display:block"
+                                        src="/res/vscodeOpenFolder.png" />
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="columns  is-centered">
+                                <div class="column is-one-quarter text">
+                                    <div class="content">
+                                        <div>Step 4</div>
+                                        <a
+                                            href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">Install
+                                            Cpp
+                                            extension</a>
+
+                                    </div>
+                                </div>
+                                <div class="column is-one-half">
+                                    <img style="margin-left:auto; margin-right:auto; display:block"
+                                        src="/res/130cppext.png" />
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="columns is-centered">
+                                <div class="column is-one-quarter">
+                                    <div class="content">
+                                        <div>Step 5</div>
+                                        <div>Download and extract this .vscode file and place it in your project
+                                            structure like so.</div>
+                                        <br />
+                                        <a class="has-text-centered" href="/res/vscode.zip" download>
+                                            <div>
+                                                <img src="/res/folder-download.png" alt="W3Schools" width="104"
+                                                    height="142">
+                                                <p>.vscode</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="column is-one-half has-text-centered">
+                                    <div>structure</div>
+                                    <img src="/res/130debug2.png" />
+                                </div>
+
+
+                            </div>
+
+                            <hr>
+
+                            <div class="columns  is-centered">
+                                <div class="column is-one-quarter">
+                                    <div class="content">
+                                        <div>Step 6</div>
+                                        <div>
+                                            Replace password in .vscode/settings.json with your ssh password.
+                                        </div>
+                                        <br>
+
+
+                                    </div>
+                                </div>
+                                <div class="column is-three-quarters">
+                                    <img style="margin-left:auto; margin-right:auto; display:block"
+                                        src="/res/set_password.png" />
+                                </div>
+                            </div>
+
+
+                            <hr>
+
+                            <div class="columns  is-centered">
+                                <div class="column is-one-quarter">
+                                    <div class="content">
+                                        <div>Step 7</div>
+                                        <div>
+                                            Open an SSH tunnel to the teaching server
+                                        </div>
+
+                                        <div>
+                                            CTRL - SHIFT - B and select tunnel
+                                        </div>
+                                        <br />
+                                        <article class="message is-warning">
+                                            <div class="message-body">
+                                                The tunnel is configured to run on launch by default, however you must
+                                                allow this when the notificaiton
+                                                appears.
+                                            </div>
+                                        </article>
+
+                                    </div>
+                                </div>
+                                <div class="column is-three-quarters">
+                                    <img style="margin-left:auto; margin-right:auto; display:block"
+                                        src="/res/build_chooser.png" />
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="columns  is-centered">
+                                <div class="column is-one-quarter">
+                                    <div class="content">
+                                        <div>Step 8</div>
+                                        <div>
+                                            Select 'build, host, and attach!' from the debugger menu
+                                        </div>
+                                        <br>
+                                        <div>
+                                            Press the green play button or F5 on your keyboard
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="column is-three-quarters">
+                                    <img style="margin-left:auto; margin-right:auto; display:block"
+                                        src="/res/130run.png" />
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0).forEach((b) => {
+            b.addEventListener('click', () => {
+                let target = document.getElementById(b.dataset.target);
+                b.classList.toggle("is-active");
+                target.classList.toggle("is-active");
+            });
+        })
+
+        //project switching
+
+
+        let to_projct = (event, project_id) => {
+            let cur_proj = document.querySelector(".project_active")
+            let next_proj = document.getElementById(project_id);
+
+            cur_proj.classList.remove("project_active");
+            cur_proj.classList.add("project_hidden");
+
+            next_proj.classList.remove("project_hidden");
+            next_proj.classList.add("project_active");
+
+
+            if (!event) return;
+            document.querySelectorAll("#projects a").forEach((e) => { e.classList.remove("is-active") })
+            event.classList.add("is-active");
+
+
+        }
+
+
+
+        if (location.hash.length > 1) {
+            to_projct(null, location.hash.slice(1, location.hash.length));
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
