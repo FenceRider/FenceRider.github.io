@@ -19,55 +19,55 @@
 
 <body>
 
-   
 
 
-<nav class="navbar" role="navigation" aria-label="main_navigation" style="background: #2196F3;">
-    <div class="navbar-brand ">
-        <a class="navbar-item has-text-light" href="/html/home.html">
-            <img class="mr-2" src="/res/Avatar.png" width="" height="112">
-            <strong>Ekle Enterprise</strong>
-        </a>
 
-        <a role="button" class="navbar-burger has-text-light" aria-label="menu" aria-expanded="false"
-            data-target="main_navbar">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </div>
-
-    <div id="main_navbar" class="navbar-menu" style="background: #2196F3;">
-        <div class="navbar-start">
+    <nav class="navbar" role="navigation" aria-label="main_navigation" style="background: #2196F3;">
+        <div class="navbar-brand ">
             <a class="navbar-item has-text-light" href="/html/home.html">
-                <strong>Home</strong>
+                <img class="mr-2" src="/res/Avatar.png" width="" height="112">
+                <strong>Ekle Enterprise</strong>
             </a>
 
-            <a class="navbar-item has-text-light" href="/html/projects.html">
-                <strong>Projects</strong>
+            <a role="button" class="navbar-burger has-text-light" aria-label="menu" aria-expanded="false"
+                data-target="main_navbar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
-
-            <a class="navbar-item has-text-light" href="/html/tutorials.html"> 
-                <strong> Tutorials </strong>
-            </a>
-
-            <a class="navbar-item has-text-light" href="/html/privacy.html">
-                <strong>Privacy</strong>
-            </a>
-
         </div>
 
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-primary" href="mailto:enterprise.ekle@gmail.com">
-                        <strong>Contact</strong>
-                    </a>
+        <div id="main_navbar" class="navbar-menu" style="background: #2196F3;">
+            <div class="navbar-start">
+                <a class="navbar-item has-text-light" href="/html/home.html">
+                    <strong>Home</strong>
+                </a>
+
+                <a class="navbar-item has-text-light" href="/html/projects.html">
+                    <strong>Projects</strong>
+                </a>
+
+                <a class="navbar-item has-text-light" href="/html/tutorials.html">
+                    <strong> Tutorials </strong>
+                </a>
+
+                <a class="navbar-item has-text-light" href="/html/privacy.html">
+                    <strong>Privacy</strong>
+                </a>
+
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary" href="mailto:enterprise.ekle@gmail.com">
+                            <strong>Contact</strong>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <br>
 
@@ -82,33 +82,30 @@
                         Java
                     </p>
                     <ul class="menu-list">
-                        <li>
-                            <a class="is-active" onclick="to_projct(this,'project_android')">Android</a>
-
-                        </li>
-                        <li><a onclick="to_projct(this,'project_3d_graphics')">3D Graphics Engine</a></li>
-                        <li><a onclick="to_projct(this,'project_physics')">Physics</a></li>
-                        <li><a onclick="to_projct(this,'project_drps')">Discord Rich Presence Setter</a></li>
+                        <li><a data-proj-id="project_android" class="is-active" onclick="to_project_el(this)">Android</a></li>
+                        <li><a data-proj-id="project_3d_graphics" onclick="to_project_el(this)">3D Graphics Engine</a></li>
+                        <li><a data-proj-id="project_physics" onclick="to_project_el(this)">Physics</a></li>
+                        <li><a data-proj-id="project_drps" onclick="to_project_el(this)">Discord Rich Presence Setter</a></li>
                     </ul>
                     <p class="menu-label">
                         Web
                     </p>
                     <ul class="menu-list">
-                        <li><a onclick="to_projct(this,'project_web_qu')">Qu</a></li>
-                        <li><a onclick="to_projct(this,'project_web_better112')">Better112 Extension</a></li>
-                        <li><a onclick="to_projct(this,'project_web_mm')">Mobile Multiplayer</a></li>
+                        <li><a data-proj-id="project_web_qu" onclick="to_project_el(this)">Qu</a></li>
+                        <li><a data-proj-id="project_web_better112" onclick="to_project_el(this)">Better112 Extension</a></li>
+                        <li><a data-proj-id="project_web_mm" onclick="to_project_el(this)">Mobile Multiplayer</a></li>
                     </ul>
                     <p class="menu-label">
                         Discord Bots
                     </p>
                     <ul class="menu-list">
-                        <li><a onclick="to_projct(this,'project_discord_Pandora')">Pandora</a></li>
-                        <li><a onclick="to_projct(this,'project_discord_minecraft')">Minecraft</a></li>
-                        <li><a onclick="to_projct(this,'project_discord_battlefield3')">Battlefield 3</a></li>
+                        <li><a data-proj-id="project_discord_Pandora" onclick="to_project_el(this)">Pandora</a></li>
+                        <li><a data-proj-id="project_discord_minecraft" onclick="to_project_el(this)">Minecraft</a></li>
+                        <li><a data-proj-id="project_discord_battlefield3" onclick="to_project_el(this)">Battlefield 3</a></li>
                     </ul>
                 </aside>
                 <div class="column">
-                    <div id="project_android" class="project_active">
+                    <div data-proj-id="project_android" class="project_active">
                         <div class="columns is-multiline">
 
                             <div class="column is-6 ">
@@ -289,7 +286,7 @@
                         </div>
                     </div>
 
-                    <div id="project_3d_graphics" class="project_hidden">
+                    <div data-proj-id="project_3d_graphics" class="project_hidden">
 
 
                         <div class="box">
@@ -334,7 +331,7 @@
                         </div>
                     </div>
 
-                    <div id="project_physics" class="project_hidden">
+                    <div data-proj-id="project_physics" class="project_hidden">
 
 
                         <div class="box">
@@ -377,7 +374,7 @@
                         </div>
                     </div>
 
-                    <div id="project_drps" class="project_hidden">
+                    <div data-proj-id="project_drps" class="project_hidden">
 
 
                         <div class="box">
@@ -414,7 +411,7 @@
                         </div>
                     </div>
 
-                    <div id="project_web_qu" class="project_hidden">
+                    <div data-proj-id="project_web_qu" class="project_hidden">
 
 
 
@@ -430,14 +427,15 @@
                                 <div class="column has-text-centered is-vertical-center">
                                     <div class="column is-vertical-center">
                                         <div><img class="badge" src="/res/badge/html.png"></img>
-                                        <img class="badge" src="/res/badge/css.png"></img>
-                                        <img class="badge" src="/res/badge/js.png"></img>
-                                        <img class="badge" src="/res/badge/ts.png"></img>
-                                        <img class="badge" src="/res/badge/nodejs.png"></img>
-                                        <img class="badge" src="/res/badge/webpack.png"></img>
-                                        <img class="badge" src="/res/badge/vue.png"></img>
-                                        <img class="badge" src="/res/badge/docker.png"></img>
-                                        <img class="badge" src="/res/badge/mariadb.png"></img></div>
+                                            <img class="badge" src="/res/badge/css.png"></img>
+                                            <img class="badge" src="/res/badge/js.png"></img>
+                                            <img class="badge" src="/res/badge/ts.png"></img>
+                                            <img class="badge" src="/res/badge/nodejs.png"></img>
+                                            <img class="badge" src="/res/badge/webpack.png"></img>
+                                            <img class="badge" src="/res/badge/vue.png"></img>
+                                            <img class="badge" src="/res/badge/docker.png"></img>
+                                            <img class="badge" src="/res/badge/mariadb.png"></img>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -463,7 +461,7 @@
                         </div>
                     </div>
 
-                    <div id="project_web_better112" class="project_hidden">
+                    <div data-proj-id="project_web_better112" class="project_hidden">
 
                         <div class="box">
 
@@ -523,7 +521,7 @@
                         </div>
                     </div>
 
-                    <div id="project_web_mm" class="project_hidden">
+                    <div data-proj-id="project_web_mm" class="project_hidden">
 
                         <div class="box">
 
@@ -559,7 +557,7 @@
                         </div>
                     </div>
 
-                    <div id="project_discord_Pandora" class="project_hidden">
+                    <div data-proj-id="project_discord_Pandora" class="project_hidden">
 
                         <div class="box">
 
@@ -600,7 +598,7 @@
                         </div>
                     </div>
 
-                    <div id="project_discord_minecraft" class="project_hidden">
+                    <div data-proj-id="project_discord_minecraft" class="project_hidden">
 
                         <div class="box">
 
@@ -659,7 +657,7 @@
                     </div>
 
 
-                    <div id="project_discord_battlefield3" class="project_hidden">
+                    <div data-proj-id="project_discord_battlefield3" class="project_hidden">
 
                         <div class="box">
 
@@ -680,7 +678,7 @@
                                         <img class="badge" src="/res/badge/discordjs.png"></img>
                                         <img class="badge" src="/res/badge/nodejs.png"></img>
                                         <img class="badge" src="/res/badge/ts.png"></img>
-                                        
+
 
                                     </div>
 
@@ -697,10 +695,10 @@
                                 <br>
                                 The second version is meant to be used with Venice Unleashed, an unofficial mod for the
                                 game. As a result, the data is not stored on Battlelog. So the bot instead connects to
-                                the BF3 server directly using RCON. This was made very simple thanks to 
+                                the BF3 server directly using RCON. This was made very simple thanks to
                                 <a href="https://github.com/Multivit4min/vu-rcon">vu-rcon</a>.
                                 <br><br>
-                                
+
 
                             </div>
                             <br>
@@ -718,7 +716,7 @@
 
     </section>
 
-    <footer class="footer" style="background:#2196F3">
+    <footer class="footer" style="background: #155e98;">
         <div class="container">
             <div class="level">
                 <div class="level-left">
@@ -734,10 +732,10 @@
 
                 <div class="level-right">
                     <div class="level-item">
-                        <div class=""><a href="https://www.linkedin.com/in/nicholas-elek/"
-                                class="has-text-light"><i class="fab fa-linkedin"></i></a></div>
-                        <div class="has-text-light"><a href="https://github.com/FenceRider"
-                                class="has-text-light"><i class="fab fa-github"></i></a></div>
+                        <div class=""><a href="https://www.linkedin.com/in/nicholas-elek/" class="has-text-light"><i
+                                    class="fab fa-linkedin"></i></a></div>
+                        <div class="has-text-light"><a href="https://github.com/FenceRider" class="has-text-light"><i
+                                    class="fab fa-github"></i></a></div>
                     </div>
                 </div>
 
@@ -765,9 +763,22 @@
         //project switching
 
 
-        let to_projct = (event, project_id) => {
+        let to_project_el = (el)=>{
+            window.location.hash = el.getAttribute("data-proj-id");
+            //to_project(el, el.getAttribute("data-proj-id"));
+        }
+
+        let to_project_id = (project_id)=>{
+            to_project(document.querySelector(`a[data-proj-id=${project_id}]`), project_id)
+        }
+
+        let to_project = (event, project_id) => {
+
+            
             let cur_proj = document.querySelector(".project_active")
-            let next_proj = document.getElementById(project_id);
+            
+            let next_proj = document.querySelector(`div[data-proj-id=${project_id}]`);
+            //let next_proj = document.getElementById(project_id);
 
             cur_proj.classList.remove("project_active");
             cur_proj.classList.add("project_hidden");
@@ -783,14 +794,20 @@
 
         }
 
-
-    
-        if(location.hash.length > 1){
-            to_projct(null, location.hash.slice(1,location.hash.length));
+        window.onhashchange = () => {
+            if (location.hash.length > 1) {
+                to_project_id(location.hash.slice(1, location.hash.length));
+            }
         }
-    
 
-        
+        if (location.hash.length > 1) {
+            to_project_id(location.hash.slice(1, location.hash.length));
+        }else{
+            location.hash = "project_android"
+        }
+
+
+
 
 
 

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/css/bulma.css">
     <link rel="stylesheet" href="/css/fa/css/all.min.css">
     <link rel="stylesheet" href="/css/ekle2.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap" rel="stylesheet">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
@@ -90,12 +92,18 @@
                                 <h5 class="subtitle is-5 ml-1">Software Development</h5>
                             </div>
                             <div class="column has-text-right pt-0">
-                                <div class="ekle-green ekle-box"></div>
-                                <div class="ekle-blue ekle-box"></div>
-                                <div class="ekle-orange ekle-box"></div>
+                                <a onclick="skipto('green')">
+                                    <div class="ekle-green ekle-box"></div>
+                                </a>
+                                <a onclick="skipto('blue')">
+                                    <div class="ekle-blue ekle-box"></div>
+                                </a>
+                                <a onclick="skipto('orange')">
+                                    <div class="ekle-orange ekle-box"></div>
+                                </a>
                             </div>
                         </div>
-                        <div class="is-5 ml-1 pt-0 mt-0" style="height:2em">
+                        <div class="is-5 ml-1 pt-0 mt-0 cmd" style="height:2em">
                             <span id="cmd_append_to">
                                 <span class="title cmd_output" style="font-size:1.4em">&gt</span>
                             </span>
@@ -121,7 +129,7 @@
         <br>
     </section>
 
-    <section class="section ekle-green">
+    <section class="section ekle-green" id="green">
 
         <br>
         <br>
@@ -172,7 +180,7 @@
     <br>
     <br>
 
-    <section class="section ekle-blue">
+    <section class="section ekle-blue" id="blue">
         <br>
         <br>
         <div class="container">
@@ -211,7 +219,7 @@
     <br>
     <br>
 
-    <section class="section ekle-orange">
+    <section class="section ekle-orange" id="orange">
         <div class="container">
             <div class="columns">
                 <div class="column is-4 is-vertical-center has-text-left">
@@ -246,9 +254,9 @@
     <br>
     <br>
 
-    
 
-    <footer class="footer" style="background:#2196F3">
+
+    <footer class="footer" style="background: #155e98;">
         <div class="container">
             <div class="level">
                 <div class="level-left">
@@ -264,10 +272,10 @@
 
                 <div class="level-right">
                     <div class="level-item">
-                        <div class=""><a href="https://www.linkedin.com/in/nicholas-elek/"
-                                class="has-text-light"><i class="fab fa-linkedin"></i></a></div>
-                        <div class="has-text-light"><a href="https://github.com/FenceRider"
-                                class="has-text-light"><i class="fab fa-github"></i></a></div>
+                        <div class=""><a href="https://www.linkedin.com/in/nicholas-elek/" class="has-text-light"><i
+                                    class="fab fa-linkedin"></i></a></div>
+                        <div class="has-text-light"><a href="https://github.com/FenceRider" class="has-text-light"><i
+                                    class="fab fa-github"></i></a></div>
                     </div>
                 </div>
 
@@ -289,6 +297,15 @@
                 target.classList.toggle("is-active");
             });
         })
+
+
+        function skipto(where) {
+
+            window.location.hash = where
+            history.replaceState(null, null, ' ');
+
+        }
+
 
 
         let caret = document.getElementById("cmd_caret");
@@ -437,7 +454,7 @@
             }
 
             let items = document.querySelectorAll('.cmd_output');
-            if (items.length > 18) {
+            if (items.length > 10) {
                 items[0].parentElement.removeChild(items[0]);
                 if (newline) {
                     items[1].parentElement.removeChild(items[1]);

@@ -102,4 +102,13 @@ footer i {
     font-size: 4em;
     margin: 0.2em;
 }
+.cmd pre{
+    font-family: 'Inconsolata', monospace;
+    font-weight: 10;
+}
+
+.cmd{
+    font-family: 'Inconsolata', monospace;
+    font-weight: 10;
+}
     
