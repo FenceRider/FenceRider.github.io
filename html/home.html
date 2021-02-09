@@ -114,7 +114,7 @@
                                 <pre class="title"
                                     style="font-size:1.3em; background: none; display:inline; overflow-wrap: normal; width: 100%; padding:0px"
                                     id="cmd_in" style="margin:0px"></pre>
-                                <span id="cmd_caret" style="font-size: 1.1em; margin-left:-3px"></span>
+                                <span id="cmd_caret" style="font-size: 1.1em; margin-left:-3px; display:inline-block">_</span>
                             </span>
 
                         </div>
@@ -149,19 +149,19 @@
 
                 <div class="column is-7 is-offset-1 has-text-centered">
                     <div class="ekle-app-icon">
-                        <img src="/res/spinnyWheelIcon.png"></src>
+                        <a href="/html/projects.html#project_android"><img src="/res/spinnyWheelIcon.png"></a>
                     </div>
                     <div class="ekle-app-icon">
-                        <img src="/res/AAAAA.png"></src>
+                        <a href="/html/projects.html#project_android"><img src="/res/AAAAA.png"></a>
                     </div>
                     <div class="ekle-app-icon">
-                        <img src="/res/FactorGameIcon.png"></src>
+                        <a href="/html/projects.html#project_android"><img src="/res/FactorGameIcon.png"></a>
                     </div>
                     <div class="ekle-app-icon">
-                        <img src="/res/StoreIcon_2.png"></src>
+                        <a href="/html/projects.html#project_android"><img src="/res/StoreIcon_2.png"></src></a>
                     </div>
                     <div class="ekle-app-icon">
-                        <img src="/res/PhotPainter3.png" style="width: auto; max-height: 100%;"></img>
+                        <a href="/html/projects.html#project_android"><img src="/res/PhotPainter3.png" style="width: auto; max-height: 100%;"></img>
                     </div>
 
                     <a href="/html/projects.html#project_android" class="has-text-light">
@@ -315,12 +315,11 @@
         let cmd_in = document.getElementById("cmd_in");
 
         setInterval(() => {
-            if (caret.innerText == "") {
-                caret.innerText = "_";
-            } else {
-                caret.innerText = "";
+            if(caret.style.visibility == "visible"){
+                caret.style.visibility = "hidden"
+            }else{
+                caret.style.visibility = "visible"
             }
-
 
         }, 400);
 
@@ -352,7 +351,7 @@
 
 
 
-            caret.innerText = "_";
+            caret.style.visibility = "visible"
             return event.key != " " && event.key != "Backspace";
         };
 
