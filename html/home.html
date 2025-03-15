@@ -384,7 +384,7 @@
             switch (parts[0]) {
 
                 case "help":
-                    print("cat, cd, clear, echo, hack, help, ls, random, warsim");
+                    print("cat, cd, clear, echo, hack, help, ls, random, privacy, warsim");
 
                     break;
                 case "random":
@@ -407,12 +407,12 @@
                 case "cat":
                     cat(parts[1]);
                     break;
-
+                case "privacy":
+                    privacy()
+                    break;
                 case "warsim":
                     await warsim();
                     break;
-
-
                 case "clear":
                     clear();
                     cmd_running = false;
@@ -469,6 +469,10 @@
 
         }
 
+
+        function privacy(){
+            window.location.href = "/html/privacy.html"
+        }
 
         async function warsim() {
             print("ATT?", false)
